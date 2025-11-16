@@ -442,9 +442,8 @@ noncomputable def symmCompOfNondegenerate (B₁ B₂ : BilinForm K V) (b₂ : B�
 theorem comp_symmCompOfNondegenerate_apply (B₁ : BilinForm K V) {B₂ : BilinForm K V}
     (b₂ : B₂.Nondegenerate) (v : V) :
     B₂ (B₁.symmCompOfNondegenerate B₂ b₂ v) = B₁ v := by
-  rw [symmCompOfNondegenerate]
-  simp only [coe_comp, LinearEquiv.coe_coe, Function.comp_apply]
-  erw [LinearEquiv.apply_symm_apply (B₂.toDual b₂)]
+  ext
+  simp [symmCompOfNondegenerate]
 
 @[simp]
 theorem symmCompOfNondegenerate_left_apply (B₁ : BilinForm K V) {B₂ : BilinForm K V}

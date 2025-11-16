@@ -145,7 +145,7 @@ lemma addY_neg {P : Fin 3 → R} (hP : W'.Equation P) : W'.addY P (W'.neg P) = -
 
 lemma addXYZ_neg {P : Fin 3 → R} (hP : W'.Equation P) :
     W'.addXYZ P (W'.neg P) = -W'.dblZ P • ![0, 1, 0] := by
-  erw [addXYZ, addX_neg, addY_neg hP, addZ_neg, smul_fin3, mul_zero, mul_one]
+  simp [addXYZ, addX_neg, addY_neg hP, addZ_neg]
 
 variable (W') in
 /-- The negation of a projective point class on a Weierstrass curve `W`.
